@@ -2,21 +2,21 @@ export class DocumentModel {
     /// <summary>
     /// Type of document
     /// </summary>
-    public DocumentType: string;
+    public documentType: string;
     /// <summary>
     /// Document number
     /// </summary>
-    public Number: string;
+    public number: string;
     /// <summary>
     /// Document Emitter
     /// </summary>
-    public Emitter: string;
+    public emitter: string;
     /// <summary>
     /// Emission Date
     /// </summary>
-    public EmissionDate: Date;
+    public emissionDate: Date;
     /// <summary>
     /// Experation Date
     /// </summary>
-    public ExpirationDate: Date;
+    public expirationDate: Date;
 }

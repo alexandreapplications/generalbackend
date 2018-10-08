@@ -1,3 +1,48 @@
 <p>
   person-edit works!
 </p>
+<form [formGroup]='_recordForm' (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Id:
+      <input type="text" formControlName="id">
+    </label>
+    <label>
+      Identification Code:
+      <input type="text" formControlName="identificationCode">
+    </label>
+    <label>
+      Name:
+      <input type="text" formControlName="name">
+    </label>
+    <label>
+      Alias:
+      <input type="text" formControlName="alias">
+    </label>
+    <label>
+      Include Date:
+      <input type="date" formControlName="includeDate">
+    </label>
+    <div formArrayName="addresses">
+      <div *ngFor="let item of addresses.controls; let i=index">
+        <gap-address-edit [index]="i" [item]="item"></gap-address-edit>
+      </div>
+    </div>
+    <div formArrayName="contacts">
+      <div *ngFor="let item of contacts.controls; let i=index">
+        <gap-contact-edit [index]="i" [item]="item"></gap-contact-edit>
+      </div>
+    </div>
+    <div formArrayName="documents">
+      <div *ngFor="let item of documents.controls; let i=index">
+        <gap-document-edit [index]="i" [item]="item"></gap-document-edit>
+      </div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="_recordForm.invalid">Enviar</button>
+</form>
+<p>{{ _record | json }}</p>
+<p>{{ _submitted }}</p>
+<div *ngIf="_submitted">
+  {{ _recordForm.value | json }}
+</div>

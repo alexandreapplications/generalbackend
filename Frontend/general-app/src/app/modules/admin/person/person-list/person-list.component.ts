@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonService } from '../person.service';
+import { PersonModel } from '../../../../models/person-model';
 
 @Component({
   selector: 'gap-person-list',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonListComponent implements OnInit {
 
-  constructor() { }
+  public displayedColumns = ['identificationCode', 'name', 'alias', 'includeDate'];
+  public _EntityList: PersonModel[];
+  constructor(personService: PersonService) {
+    this._EntityList = personService.getList();
+  }
 
   ngOnInit() {
   }

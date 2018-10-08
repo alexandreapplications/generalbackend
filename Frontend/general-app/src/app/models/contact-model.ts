@@ -3,26 +3,26 @@ export class ContactModel {
     /// Contact Type
     /// </summary>
     /// <remarks>Email, Telephone, Site</remarks>
-    public ContactType: string;
+    public contactType: string;
     /// <summary>
     /// Document description
     /// </summary>
     /// <remarks>Home, Facebook</remarks>
-    public Description: string;
+    public description: string;
     /// <summary>
     /// Contact Value
     /// </summary>
-    public Value: string;
+    public value: string;
     /// <summary>
     /// Complementary information
     /// </summary>
-    public Information: string;
+    public information: string;
     /// <summary>
     /// Is main contact
     /// </summary>
-    public IsMain: boolean;
+    public isMain: boolean;
     /// <summary>
     /// Removal date
     /// </summary>
-    public DeletedDate: Date;
+    public deletedDate: Date;
 }

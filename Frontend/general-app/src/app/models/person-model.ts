@@ -10,7 +10,7 @@ export class PersonModel {
     /// <summary>
     /// External code
     /// </summary>
-    public IdentificationCode: string;
+    public identificationCode: string;
     /// <summary>
     /// Name
     /// </summary>
@@ -26,13 +26,13 @@ export class PersonModel {
     /// <summary>
     /// Addresses of the user
     /// </summary>
-    public Addresses: Array<AddressModel>;
+    public addresses: Array<AddressModel>;
     /// <summary>
     /// Contacts with the user
     /// </summary>
-    public Contacts: Array<ContactModel>;
+    public contacts: Array<ContactModel>;
     /// <summary>
     /// Documents of the user
     /// </summary>
-    public Documents: Array<DocumentModel>;
+    public documents: Array<DocumentModel>;
 }
