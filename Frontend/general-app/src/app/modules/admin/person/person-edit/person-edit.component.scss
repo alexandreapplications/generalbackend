@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    .main {
+        margin-top: 20px;
+        width: 800px;
+        min-width: 600px;
+        .form-fields {
+            flex-direction: row;
+        }
+        .form-fields > * {
+            width: 100%;
+          }
+    }
+}

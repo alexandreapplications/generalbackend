@@ -1,0 +1,22 @@
+<div class="itemToolbar">
+  <span class="title" *ngIf="index == 0">
+    {{ title }}
+  </span>
+  <span class="title" *ngIf="index > 0">
+    {{ index + 1 }}
+  </span>
+  <div class="controls">
+    <button mat-button *ngIf="index > 0">
+      <mat-icon (click)="doMoveUp()">arrow_upward</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon (click)="doAddRecord()">add</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon (click)="doRemove()">remove</mat-icon>
+    </button>
+    <button mat-button *ngIf="index + 1 < count">
+      <mat-icon (click)="doMoveDown()">arrow_downward</mat-icon>
+    </button>
+  </div>
+</div>

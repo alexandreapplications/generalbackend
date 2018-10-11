@@ -1,48 +1,64 @@
-<p>
-  person-edit works!
-</p>
-<form [formGroup]='_recordForm' (ngSubmit)="onSubmit()">
-  <div>
-    <label>
-      Id:
-      <input type="text" formControlName="id">
-    </label>
-    <label>
-      Identification Code:
-      <input type="text" formControlName="identificationCode">
-    </label>
-    <label>
-      Name:
-      <input type="text" formControlName="name">
-    </label>
-    <label>
-      Alias:
-      <input type="text" formControlName="alias">
-    </label>
-    <label>
-      Include Date:
-      <input type="date" formControlName="includeDate">
-    </label>
-    <div formArrayName="addresses">
-      <div *ngFor="let item of addresses.controls; let i=index">
-        <gap-address-edit [index]="i" [item]="item"></gap-address-edit>
-      </div>
-    </div>
-    <div formArrayName="contacts">
-      <div *ngFor="let item of contacts.controls; let i=index">
-        <gap-contact-edit [index]="i" [item]="item"></gap-contact-edit>
-      </div>
-    </div>
-    <div formArrayName="documents">
-      <div *ngFor="let item of documents.controls; let i=index">
-        <gap-document-edit [index]="i" [item]="item"></gap-document-edit>
-      </div>
+<div class="flex">
+  <div class="container">
+    <div class="main">
+      <mat-card>
+        <form [formGroup]='_recordForm' (ngSubmit)="onSubmit()">
+          <mat-card-content class="form-fields">
+              <mat-form-field>
+                <input type="text" matInput formControlName="identificationCode" placeholder="Record Id">
+                <mat-error *ngIf="_recordForm.get('identificationCode').getError('required')">This field is required</mat-error>
+              </mat-form-field>
+            <mat-form-field>
+              <input type="text" matInput formControlName="name" placeholder="Name">
+              <mat-error *ngIf="_recordForm.get('name').getError('required')">This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="text" matInput formControlName="alias" placeholder="Alias">
+              <mat-error *ngIf="_recordForm.get('alias').getError('minlength')">This field must have at least 10
+                chars</mat-error>
+            </mat-form-field>
+            <br>
+            <div class="listRecordsContainer">
+              <div formArrayName="addresses">
+                <div *ngFor="let item of addresses.controls; let i=index" class="listRecords">
+                  <gap-multi-control [index]="i" [formArray]="addresses" (needsEmptyRecord)="addNewAddress($event)"
+                    title="Address"></gap-multi-control>
+                  <gap-address-edit [index]="i" [item]="item"></gap-address-edit>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="listRecordsContainer">
+              <div formArrayName="contacts">
+                <div *ngFor="let item of contacts.controls; let i=index" class="listRecords">
+                  <gap-multi-control [index]="i" [formArray]="contacts" (needsEmptyRecord)="addNewContact($event)"
+                    title="Contact"></gap-multi-control>
+                  <gap-contact-edit [index]="i" [item]="item"></gap-contact-edit>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="listRecordsContainer">
+              <div formArrayName="documents">
+                <div *ngFor="let item of documents.controls; let i=index" class="listRecords">
+                  <gap-multi-control [index]="i" [formArray]="documents" (needsEmptyRecord)="addNewDocument($event)"
+                    title="Document"></gap-multi-control>
+                  <gap-document-edit [index]="i" [item]="item"></gap-document-edit>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-footer>
+            <p>{{ _record | json }}</p>
+            <p>{{ _submitted }}</p>
+            <div *ngIf="_submitted">
+              {{ _recordForm.value | json }}
+            </div>
+          </mat-card-footer>
+          <mat-card-actions>
+            <button type="submit" [disabled]="_recordForm.invalid">Enviar</button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
     </div>
   </div>
-  <button type="submit" [disabled]="_recordForm.invalid">Enviar</button>
-</form>
-<p>{{ _record | json }}</p>
-<p>{{ _submitted }}</p>
-<div *ngIf="_submitted">
-  {{ _recordForm.value | json }}
-</div>

@@ -1,0 +1,13 @@
+.container {
+    .row-1 {
+        display: flex;
+        flex-flow: row;
+        .col-2 {
+            flex: 50%;
+            margin-left: 5px;
+        }   
+    }
+    .mat-form-field {
+        width: 100%;
+    }
+}

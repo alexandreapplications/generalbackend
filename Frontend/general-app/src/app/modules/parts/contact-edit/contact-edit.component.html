@@ -1,24 +1,21 @@
 <div [formGroup]="item">
-  <label>
-    contactType:
-    <input type="text" formControlName="contactType">
-  </label>
-  <label>
-    description:
-    <input type="text" formControlName="description">
-  </label>
-  <label>
-    value:
-    <input type="text" formControlName="value">
-  </label>
-  <label>
-    information:
-    <input type="text" formControlName="information">
-  </label><label>
-    isMain:
-    <input type="text" formControlName="isMain">
-  </label><label>
-    deletedDate:
-    <input type="text" formControlName="deletedDate">
-  </label>
+  <div class='row-1'>
+    <mat-form-field class="col-1">
+      <input type="text" matInput formControlName="contactType" placeholder="Type">
+    </mat-form-field>
+    <mat-form-field class="col-2">
+      <input type="text" matInput formControlName="description" placeholder="Description">
+    </mat-form-field>
+    <mat-form-field class="col-3">
+      <input type="text" matInput formControlName="value" placeholder="Value">
+    </mat-form-field>
+  </div>
+  <div class='row-2'>
+    <mat-form-field>
+      <input type="text" matInput formControlName="information" placeholder="Information">
+    </mat-form-field>
+    <mat-form-field class="col-2">
+      <input type="text" matInput formControlName="isMain" placeholder="Is Main">
+    </mat-form-field>
+  </div>
 </div>

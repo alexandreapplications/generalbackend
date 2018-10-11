@@ -1,0 +1,10 @@
+.itemToolbar {
+    background-color: #ccc;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    .title {
+        flex: 1 1 auto;
+        font-size: 24pt;
+    }
+}

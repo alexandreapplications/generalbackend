@@ -1,30 +1,36 @@
-<div [formGroup]="item">
-  <label>
-    Street:
-    <input type="text" formControlName="street">
-  </label>
-  <label>
-    Number:
-    <input type="text" formControlName="number">
-  </label>
-  <label>
-    information:
-    <input type="text" formControlName="information">
-  </label>
-  <label>
-    city:
-    <input type="text" formControlName="city">
-  </label><label>
-    state:
-    <input type="text" formControlName="state">
-  </label><label>
-    country:
-    <input type="text" formControlName="country">
-  </label><label>
-    zipCode:
-    <input type="text" formControlName="zipCode">
-  </label><label>
-    removalDate:
-    <input type="text" formControlName="removalDate">
-  </label>
-</div>
+<div [formGroup]="item" class='container'>
+  <div class='row-1'>
+    <mat-form-field>
+      <input type="text" matInput formControlName="street" placeholder="Street">
+    </mat-form-field>
+    <div class='col-2'>
+      <mat-form-field>
+        <input type="text" matInput formControlName="number" placeholder="Number">
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-form-field>
+    <input type="text" matInput formControlName="information" placeholder="Information">
+  </mat-form-field>
+  <div class='row-1'>
+    <mat-form-field>
+      <input type="text" matInput formControlName="city" placeholder="City">
+    </mat-form-field>
+    <div class='col-2'>
+      <mat-form-field>
+        <input type="text" matInput formControlName="state" placeholder="State">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class='row-1'>
+    <mat-form-field>
+      <input type="text" matInput formControlName="country" placeholder="Country">
+    </mat-form-field>
+    <div class='col-2'>
+      <mat-form-field>
+        <input type="text" matInput formControlName="zipCode" placeholder="ZipCode">
+      </mat-form-field>
+    </div>
+    <div>
+
+    </div>

@@ -6,6 +6,9 @@ import { PersonModel } from '../../../../models/person-model';
 import { AddressEditComponent } from '../../../parts/address-edit/address-edit.component';
 import { ContactEditComponent } from '../../../parts/contact-edit/contact-edit.component';
 import { DocumentEditComponent } from '../../../parts/document-edit/document-edit.component';
+import { AddressModel } from 'src/app/models/address-model';
+import { DocumentModel } from 'src/app/models/document-model';
+import { ContactModel } from 'src/app/models/contact-model';
 
 @Component({
   selector: 'gap-person-edit',
@@ -36,7 +39,7 @@ export class PersonEditComponent implements OnInit {
       id: [this._record.id, Validators.required],
       identificationCode: [this._record.identificationCode, Validators.required],
       name: [this._record.name, Validators.required],
-      alias: [this._record.alias],
+      alias: [this._record.alias, Validators.minLength(10)],
       includeDate: [this._record.includeDate],
       addresses: this._formBuilder.array(
         this._record.addresses.map(x => AddressEditComponent.getForm(this._formBuilder, x))
@@ -48,6 +51,16 @@ export class PersonEditComponent implements OnInit {
         this._record.contacts.map(x => ContactEditComponent.getForm(this._formBuilder, x))
       )
     });
+  }
+
+  public addNewAddress() {
+    this.addresses.controls.push(AddressEditComponent.getForm(this._formBuilder, new AddressModel()));
+  }
+  public addNewContact() {
+    this.contacts.controls.push(ContactEditComponent.getForm(this._formBuilder, new ContactModel()));
+  }
+  public addNewDocument() {
+    this.documents.controls.push(DocumentEditComponent.getForm(this._formBuilder, new DocumentModel()));
   }
 
   get addresses(): FormArray {

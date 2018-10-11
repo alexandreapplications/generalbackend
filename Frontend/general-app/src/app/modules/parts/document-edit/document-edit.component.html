@@ -1,21 +1,21 @@
 <div [formGroup]="item">
-  <label>
-    documentType:
-    <input type="text" formControlName="documentType">
-  </label>
-  <label>
-    number:
-    <input type="text" formControlName="number">
-  </label>
-  <label>
-    emitter:
-    <input type="text" formControlName="emitter ">
-  </label>
-  <label>
-    emissionDate:
-    <input type="text" formControlName="emissionDate">
-  </label><label>
-    expirationDate:
-    <input type="text" formControlName="expirationDate">
-  </label>
+  <div class='row-1'>
+    <mat-form-field>
+      <input type="text" matInput formControlName="documentType" placeholder="Type">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput formControlName="number" placeholder="Number">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput formControlName="emitter" placeholder="Emitter">
+    </mat-form-field>
+  </div>
+  <div class='row-2'>
+    <mat-form-field>
+      <input type="text" matInput formControlName="emissionDate" placeholder="Emmiter Date">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput formControlName="expirationDate" placeholder="Expiration Date">
+    </mat-form-field>
+  </div>
 </div>

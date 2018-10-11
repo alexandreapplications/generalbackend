@@ -46,7 +46,13 @@ export class PersonService {
           deletedDate: null
         }
       ],
-      documents: []
+      documents: [{
+        documentType: 'Document Type',
+        emissionDate: new Date(2018, 5, 2, 0, 0, 0, 0),
+        emitter: 'Document emmiter',
+        number: '1233',
+        expirationDate: null
+      }]
     };
     return personModel;
   }
