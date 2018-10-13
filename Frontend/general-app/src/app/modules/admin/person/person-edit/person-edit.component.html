@@ -7,16 +7,22 @@
               <mat-form-field>
                 <input type="text" matInput formControlName="identificationCode" placeholder="Record Id">
                 <mat-error *ngIf="_recordForm.get('identificationCode').getError('required')">This field is required</mat-error>
+                <mat-error *ngIf="_recordForm.get('identificationCode').getError('maxlength')">
+                  This field shoudn't have more than {{ this._recordForm.get('identificationCode').getError('maxlength').requiredLength }} characters and has {{ this._recordForm.get('identificationCode').getError('maxlength').actualLength }}</mat-error>
               </mat-form-field>
-            <mat-form-field>
+              <mat-form-field>
               <input type="text" matInput formControlName="name" placeholder="Name">
               <mat-error *ngIf="_recordForm.get('name').getError('required')">This field is required</mat-error>
+              <mat-error *ngIf="_recordForm.get('name').getError('maxlength')">
+                  This field shoudn't have more than {{ this._recordForm.get('name').getError('maxlength').requiredLength }} characters and has {{ this._recordForm.get('name').getError('maxlength').actualLength }}</mat-error>
             </mat-form-field>
             <mat-form-field>
               <input type="text" matInput formControlName="alias" placeholder="Alias">
-              <mat-error *ngIf="_recordForm.get('alias').getError('minlength')">This field must have at least 10
+              <mat-error *ngIf="_recordForm.get('alias').getError('minlength')">This field must have at least {{ this._recordForm.get('alias').getError('minlength').requiredLength }} and has only {{ this._recordForm.get('alias').getError('minlength').actualLength }}
                 chars</mat-error>
-            </mat-form-field>
+                <mat-error *ngIf="_recordForm.get('alias').getError('maxlength')">
+                    This field shoudn't have more than {{ this._recordForm.get('alias').getError('maxlength').requiredLength }} characters and has {{ this._recordForm.get('alias').getError('maxlength').actualLength }}</mat-error>
+              </mat-form-field>
             <br>
             <div class="listRecordsContainer">
               <div formArrayName="addresses">
@@ -56,7 +62,8 @@
             </div>
           </mat-card-footer>
           <mat-card-actions>
-            <button type="submit" [disabled]="_recordForm.invalid">Enviar</button>
+            <button type="submit">Enviar</button>
+            <!-- <button type="submit" [disabled]="_recordForm.invalid">Enviar</button> -->
           </mat-card-actions>
         </form>
       </mat-card>

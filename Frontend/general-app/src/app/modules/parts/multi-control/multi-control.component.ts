@@ -20,7 +20,7 @@ export class MultiControlComponent implements OnInit {
   @Input()
   public mustHave = false;
   @Output()
-  public needsEmptyRecord: EventEmitter = new EventEmitter();
+  public needsEmptyRecord: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public get count(): number {
     return this.formArray.controls.length;
@@ -38,12 +38,12 @@ export class MultiControlComponent implements OnInit {
   public doRemove() {
     this.formArray.controls.splice(this.index, 1);
     if (this.mustHave && this.count === 0) {
-      this.needsEmptyRecord.emit(null);
+      this.needsEmptyRecord.emit(true);
     }
   }
 
   public doAddRecord() {
-    this.needsEmptyRecord.emit(null);
+    this.needsEmptyRecord.emit(true);
   }
 
   ngOnInit() {
