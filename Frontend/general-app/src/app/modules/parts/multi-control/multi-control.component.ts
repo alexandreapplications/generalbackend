@@ -29,11 +29,13 @@ export class MultiControlComponent implements OnInit {
   public doMoveUp() {
     const itemToMove = this.formArray.controls.splice(this.index, 1);
     this.formArray.controls.splice(this.index - 1, 0, itemToMove[0]);
+    this.index--;
   }
 
   public doMoveDown() {
     const itemToMove = this.formArray.controls.splice(this.index, 1);
     this.formArray.controls.splice(this.index + 1, 0, itemToMove[0]);
+    this.index++;
   }
   public doRemove() {
     this.formArray.controls.splice(this.index, 1);

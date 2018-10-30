@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DocumentModel } from '../../../models/document-model';
 
 @Component({
@@ -22,9 +22,9 @@ export class DocumentEditComponent implements OnInit {
 
   static getForm(formBuiler: FormBuilder, model: DocumentModel): FormGroup {
     return formBuiler.group({
-      documentType: model.documentType,
-      number: model.number,
-      emitter: model.emitter,
+      documentType: [model.documentType, [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
+      number: [model.number, [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
+      emitter: [model.emitter, [Validators.minLength(5), Validators.maxLength(30)]],
       emissionDate: model.emissionDate,
       expirationDate: model.expirationDate
     });

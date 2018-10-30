@@ -1,21 +1,41 @@
 <div [formGroup]="item">
   <div class='row-1'>
-    <mat-form-field>
-      <input type="text" matInput formControlName="documentType" placeholder="Type">
+    <mat-form-field class="col-1">
+      <input type="text" matInput formControlName="documentType" placeholder="Type" i18n-placeholder="Document Type@@type">
+      <mat-error *ngIf="item.get('documentType').getError('required')" i18n="@@required">This field is required</mat-error>
+      <mat-error *ngIf="item.get('documentType').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('documentType').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('documentType').getError('maxlength').actualLength }}</mat-error>
+      <mat-error *ngIf="item.get('documentType').getError('minlength')">
+        This field shoud have at least {{ this.item.get('documentType').getError('minlength').requiredLength
+        }} characters and has {{ this.item.get('documentType').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input type="text" matInput formControlName="number" placeholder="Number">
-    </mat-form-field>
-    <mat-form-field>
-      <input type="text" matInput formControlName="emitter" placeholder="Emitter">
+    <mat-form-field class="col-2">
+      <input type="text" matInput formControlName="number" placeholder="Number" i18n-placeholder="Document number Type@@number">
+      <mat-error *ngIf="item.get('number').getError('required')" i18n="@@required">This field is required</mat-error>
+      <mat-error *ngIf="item.get('number').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('number').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('number').getError('maxlength').actualLength }}</mat-error>
+      <mat-error *ngIf="item.get('number').getError('minlength')">
+        This field shoud have at least {{ this.item.get('number').getError('minlength').requiredLength
+        }} characters and has {{ this.item.get('number').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
   </div>
   <div class='row-2'>
-    <mat-form-field>
-      <input type="text" matInput formControlName="emissionDate" placeholder="Emmiter Date">
+    <mat-form-field class="col-1">
+      <input type="text" matInput formControlName="emitter" placeholder="Emitter" i18n-placeholder="Document emitter@@emiter">
+      <mat-error *ngIf="item.get('emitter').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('emitter').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('emitter').getError('maxlength').actualLength }}</mat-error>
+      <mat-error *ngIf="item.get('emitter').getError('minlength')">
+        This field shoud have at least {{ this.item.get('emitter').getError('minlength').requiredLength
+        }} characters and has {{ this.item.get('emitter').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input type="text" matInput formControlName="expirationDate" placeholder="Expiration Date">
+    <mat-form-field class="col-2">
+      <input type="date" matInput formControlName="emissionDate" placeholder="Emission Date" i18n-placeholder="Emission date@@emissionDate">
+    </mat-form-field>
+    <mat-form-field class="col-3">
+      <input type="date" matInput formControlName="expirationDate" placeholder="Expiration Date" i18n-placeholder="Expiration date@@expirationDate">
     </mat-form-field>
   </div>
 </div>

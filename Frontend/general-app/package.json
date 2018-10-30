@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start-pt": "ng serve -c pt --aot",
+    "extract-i18n": "ng xi18n --output-path i18n && xliffmerge --profile xliffmerge.json en pt"
   },
   "private": true,
   "dependencies": {

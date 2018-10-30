@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PersonListComponent } from './person-list.component';
+import { MatTableModule } from '@angular/material';
+import { PartsModule } from 'src/app/modules/parts/parts.module';
 
 describe('PersonListComponent', () => {
   let component: PersonListComponent;
@@ -8,8 +10,10 @@ describe('PersonListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonListComponent ]
-    })
+      declarations: [ PersonListComponent ],
+      imports: [ MatTableModule, PartsModule ]
+    }
+    )
     .compileComponents();
   }));
 

@@ -1,21 +1,45 @@
 <div [formGroup]="item">
   <div class='row-1'>
     <mat-form-field class="col-1">
-      <input type="text" matInput formControlName="contactType" placeholder="Type">
+      <input type="text" matInput formControlName="contactType" placeholder="Type" i18n-placeholder="Contact Type@@type">
+      <mat-error *ngIf="item.get('contactType').getError('required')" i18n="@@required">This field is required</mat-error>
+      <mat-error *ngIf="item.get('contactType').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('contactType').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('contactType').getError('maxlength').actualLength }}</mat-error>
+        <mat-error *ngIf="item.get('contactType').getError('minlength')">
+          This field shoud have at least {{ this.item.get('contactType').getError('minlength').requiredLength
+          }} characters and has {{ this.item.get('contactType').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
     <mat-form-field class="col-2">
-      <input type="text" matInput formControlName="description" placeholder="Description">
+      <input type="text" matInput formControlName="description" placeholder="Description" i18n-placeholder="Description@@description">
+      <mat-error *ngIf="item.get('description').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('description').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('description').getError('maxlength').actualLength }}</mat-error>
+        <mat-error *ngIf="item.get('description').getError('minlength')">
+          This field shoud have at least {{ this.item.get('description').getError('minlength').requiredLength
+          }} characters and has {{ this.item.get('description').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
     <mat-form-field class="col-3">
-      <input type="text" matInput formControlName="value" placeholder="Value">
+      <input type="text" matInput formControlName="value" placeholder="Value" i18n-placeholder="Contact value@@value">
+      <mat-error *ngIf="item.get('value').getError('required')">This field is required</mat-error>
+      <mat-error *ngIf="item.get('value').getError('minlength')">
+        This field shoud have at least {{ this.item.get('value').getError('minlength').requiredLength
+        }} characters and has {{ this.item.get('value').getError('minlength').actualLength }}</mat-error>
+
     </mat-form-field>
   </div>
   <div class='row-2'>
     <mat-form-field>
-      <input type="text" matInput formControlName="information" placeholder="Information">
+      <input type="text" matInput formControlName="information" placeholder="Information" i18n-placeholder="Contact Information@@information">
+      <mat-error *ngIf="item.get('information').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('information').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('information').getError('maxlength').actualLength }}</mat-error>
+        <mat-error *ngIf="item.get('information').getError('minlength')">
+          This field shoud have at least {{ this.item.get('information').getError('minlength').requiredLength
+          }} characters and has {{ this.item.get('information').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
     <mat-form-field class="col-2">
-      <input type="text" matInput formControlName="isMain" placeholder="Is Main">
+      <input type="text" matInput formControlName="isMain" placeholder="Is Main" i18n-placeholder="Is the main contact@@isMain">
     </mat-form-field>
   </div>
 </div>

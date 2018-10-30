@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="street" datatype="html">
+        <source>Street</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Street name</note>
+      </trans-unit>
+      <trans-unit id="number" datatype="html">
+        <source>Number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/document-edit/document-edit.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Numer</note>
+      </trans-unit>
+      <trans-unit id="information" datatype="html">
+        <source>Information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/contact-edit/contact-edit.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="description">Information</note>
+      </trans-unit>
+      <trans-unit id="city" datatype="html">
+        <source>City</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">City name</note>
+      </trans-unit>
+      <trans-unit id="state" datatype="html">
+        <source>State</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">State or provice</note>
+      </trans-unit>
+      <trans-unit id="country" datatype="html">
+        <source>Country</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">Country name</note>
+      </trans-unit>
+      <trans-unit id="required" datatype="html">
+        <source>This field is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/contact-edit/contact-edit.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/document-edit/document-edit.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/document-edit/document-edit.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/admin/person/person-edit/person-edit.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/admin/person/person-edit/person-edit.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="zipCode" datatype="html">
+        <source>ZipCode</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/address-edit/address-edit.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <note priority="1" from="description">Zip code</note>
+      </trans-unit>
+      <trans-unit id="type" datatype="html">
+        <source>Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/contact-edit/contact-edit.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/document-edit/document-edit.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Contact Type</note>
+      </trans-unit>
+      <trans-unit id="description" datatype="html">
+        <source>Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/contact-edit/contact-edit.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Description</note>
+      </trans-unit>
+      <trans-unit id="value" datatype="html">
+        <source>Value</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/contact-edit/contact-edit.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">Contact value</note>
+      </trans-unit>
+      <trans-unit id="isMain" datatype="html">
+        <source>Is Main</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/contact-edit/contact-edit.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">Is the main contact</note>
+      </trans-unit>
+      <trans-unit id="emiter" datatype="html">
+        <source>Emitter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/document-edit/document-edit.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Document emitter</note>
+      </trans-unit>
+      <trans-unit id="emissionDate" datatype="html">
+        <source>Emission Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/document-edit/document-edit.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Emission date</note>
+      </trans-unit>
+      <trans-unit id="expirationDate" datatype="html">
+        <source>Expiration Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/parts/document-edit/document-edit.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Expiration date</note>
+      </trans-unit>
+      <trans-unit id="recordId" datatype="html">
+        <source>Record Id</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/admin/person/person-edit/person-edit.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="name" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/admin/person/person-edit/person-edit.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="alias" datatype="html">
+        <source>Alias</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/admin/person/person-edit/person-edit.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="address" datatype="html">
+        <source>Address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/admin/person/person-edit/person-edit.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Address Title</note>
+      </trans-unit>
+      <trans-unit id="contact" datatype="html">
+        <source>Contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/admin/person/person-edit/person-edit.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <note priority="1" from="description">Contact Title</note>
+      </trans-unit>
+      <trans-unit id="document" datatype="html">
+        <source>Document</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/admin/person/person-edit/person-edit.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <note priority="1" from="description">Document Title</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

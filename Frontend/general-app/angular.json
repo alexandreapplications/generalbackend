@@ -48,6 +48,14 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            }, 
+            "pt": {
+              "aot": true,
+              "outputPath": "dist/general-app-pt",
+              "i18nFile": "src/i18n/messages.pt.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "pt",
+              "i18nMissingTranslation": "erro"
             }
           }
         },
@@ -59,6 +67,9 @@
           "configurations": {
             "production": {
               "browserTarget": "general-app:build:production"
+            },
+            "pt": {
+              "browserTarget": "general-app:build:pt"
             }
           }
         },

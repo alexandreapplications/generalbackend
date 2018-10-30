@@ -1,34 +1,41 @@
 <div class="flex">
   <div class="container">
     <div class="main">
-      <mat-card>
-        <form [formGroup]='_recordForm' (ngSubmit)="onSubmit()">
+      <form [formGroup]='_recordForm' (ngSubmit)="onSubmit()">
+        <mat-card>
           <mat-card-content class="form-fields">
-              <mat-form-field>
-                <input type="text" matInput formControlName="identificationCode" placeholder="Record Id">
-                <mat-error *ngIf="_recordForm.get('identificationCode').getError('required')">This field is required</mat-error>
-                <mat-error *ngIf="_recordForm.get('identificationCode').getError('maxlength')">
-                  This field shoudn't have more than {{ this._recordForm.get('identificationCode').getError('maxlength').requiredLength }} characters and has {{ this._recordForm.get('identificationCode').getError('maxlength').actualLength }}</mat-error>
-              </mat-form-field>
-              <mat-form-field>
-              <input type="text" matInput formControlName="name" placeholder="Name">
-              <mat-error *ngIf="_recordForm.get('name').getError('required')">This field is required</mat-error>
-              <mat-error *ngIf="_recordForm.get('name').getError('maxlength')">
-                  This field shoudn't have more than {{ this._recordForm.get('name').getError('maxlength').requiredLength }} characters and has {{ this._recordForm.get('name').getError('maxlength').actualLength }}</mat-error>
+            <mat-form-field>
+              <input type="text" matInput formControlName="identificationCode" placeholder="Record Id" i18n-placeholder="@@recordId">
+              <mat-error *ngIf="_recordForm.get('identificationCode').getError('required')" i18n="@@required">This field is required</mat-error>
+              <mat-error *ngIf="_recordForm.get('identificationCode').getError('maxlength')">
+                This field shoudn't have more than {{
+                this._recordForm.get('identificationCode').getError('maxlength').requiredLength }} characters and has
+                {{ this._recordForm.get('identificationCode').getError('maxlength').actualLength }}</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input type="text" matInput formControlName="alias" placeholder="Alias">
-              <mat-error *ngIf="_recordForm.get('alias').getError('minlength')">This field must have at least {{ this._recordForm.get('alias').getError('minlength').requiredLength }} and has only {{ this._recordForm.get('alias').getError('minlength').actualLength }}
+              <input type="text" matInput formControlName="name" placeholder="Name" i18n-placeholder="@@name">
+              <mat-error *ngIf="_recordForm.get('name').getError('required')" i18n="@@required">This field is required</mat-error>
+              <mat-error *ngIf="_recordForm.get('name').getError('maxlength')">
+                This field shoudn't have more than {{ this._recordForm.get('name').getError('maxlength').requiredLength
+                }} characters and has {{ this._recordForm.get('name').getError('maxlength').actualLength }}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="text" matInput formControlName="alias" placeholder="Alias" i18n-placeholder="@@alias">
+              <mat-error *ngIf="_recordForm.get('alias').getError('minlength')">This field must have at least {{
+                this._recordForm.get('alias').getError('minlength').requiredLength }} and has only {{
+                this._recordForm.get('alias').getError('minlength').actualLength }}
                 chars</mat-error>
-                <mat-error *ngIf="_recordForm.get('alias').getError('maxlength')">
-                    This field shoudn't have more than {{ this._recordForm.get('alias').getError('maxlength').requiredLength }} characters and has {{ this._recordForm.get('alias').getError('maxlength').actualLength }}</mat-error>
-              </mat-form-field>
+              <mat-error *ngIf="_recordForm.get('alias').getError('maxlength')">
+                This field shoudn't have more than {{
+                this._recordForm.get('alias').getError('maxlength').requiredLength }} characters and has {{
+                this._recordForm.get('alias').getError('maxlength').actualLength }}</mat-error>
+            </mat-form-field>
             <br>
             <div class="listRecordsContainer">
               <div formArrayName="addresses">
                 <div *ngFor="let item of addresses.controls; let i=index" class="listRecords">
                   <gap-multi-control [index]="i" [formArray]="addresses" (needsEmptyRecord)="addNewAddress($event)"
-                    title="Address"></gap-multi-control>
+                    title="Address" i18n-title="Address Title@@address"></gap-multi-control>
                   <gap-address-edit [index]="i" [item]="item"></gap-address-edit>
                 </div>
               </div>
@@ -38,7 +45,7 @@
               <div formArrayName="contacts">
                 <div *ngFor="let item of contacts.controls; let i=index" class="listRecords">
                   <gap-multi-control [index]="i" [formArray]="contacts" (needsEmptyRecord)="addNewContact($event)"
-                    title="Contact"></gap-multi-control>
+                    title="Contact" i18n-title="Contact Title@@contact"></gap-multi-control>
                   <gap-contact-edit [index]="i" [item]="item"></gap-contact-edit>
                 </div>
               </div>
@@ -48,24 +55,28 @@
               <div formArrayName="documents">
                 <div *ngFor="let item of documents.controls; let i=index" class="listRecords">
                   <gap-multi-control [index]="i" [formArray]="documents" (needsEmptyRecord)="addNewDocument($event)"
-                    title="Document"></gap-multi-control>
+                    title="Document" i18n-title="Document Title@@document"></gap-multi-control>
                   <gap-document-edit [index]="i" [item]="item"></gap-document-edit>
                 </div>
               </div>
             </div>
           </mat-card-content>
-          <mat-card-footer>
-            <p>{{ _record | json }}</p>
-            <p>{{ _submitted }}</p>
-            <div *ngIf="_submitted">
-              {{ _recordForm.value | json }}
-            </div>
-          </mat-card-footer>
           <mat-card-actions>
-            <button type="submit">Enviar</button>
-            <!-- <button type="submit" [disabled]="_recordForm.invalid">Enviar</button> -->
+            <!-- <button type="submit" mat-button>Enviar</button> -->
+            <button type="submit" [disabled]="_recordForm.invalid || addresses.invalid || contacts.invalid || documents.invalid ">Enviar</button>
           </mat-card-actions>
-        </form>
+        </mat-card>
+      </form>
+      <br />
+      <mat-card>
+        <mat-card-header>Information</mat-card-header>
+        <mat-card-content>
+          <p>{{ _record | json }}</p>
+          <p>{{ _submitted }}</p>
+          <div *ngIf="_submitted">
+            {{ _recordForm.value | json }}
+          </div>
+        </mat-card-content>
       </mat-card>
     </div>
   </div>

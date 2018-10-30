@@ -22,10 +22,10 @@ export class ContactEditComponent implements OnInit {
 
   static getForm(formBuiler: FormBuilder, model: ContactModel): FormGroup {
     return formBuiler.group({
-      contactType: [model.contactType, Validators.required],
-      description: model.description,
-      value: [model.value, Validators.required],
-      information: model.information,
+      contactType: [model.contactType, [Validators.required, Validators.maxLength(30), Validators.minLength(5)]],
+      description: [model.description, [Validators.maxLength(50), Validators.minLength(5)]],
+      value: [model.value, [Validators.required, Validators.minLength(5), Validators.minLength(5)]],
+      information: [model.information, [Validators.maxLength(50), Validators.minLength(5)]],
       isMain: model.isMain,
       deletedDate: model.deletedDate
     });

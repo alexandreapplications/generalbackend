@@ -33,23 +33,25 @@ export class PersonEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._id = this._route.snapshot.paramMap.get('id');
-    this._record = this._personService.getSingle(this._id);
-    this._recordForm = this._formBuilder.group({
-      id: [this._record.id, Validators.required],
-      identificationCode: [this._record.identificationCode, [Validators.required, Validators.maxLength(15)]],
-      name: [this._record.name, [Validators.required, Validators.maxLength(80)]],
-      alias: [this._record.alias, [Validators.minLength(10), Validators.maxLength(30)]],
-      includeDate: [this._record.includeDate],
-      addresses: this._formBuilder.array(
-        this._record.addresses.map(x => AddressEditComponent.getForm(this._formBuilder, x))
-      ),
-      documents: this._formBuilder.array(
-        this._record.documents.map(x => DocumentEditComponent.getForm(this._formBuilder, x))
-      ),
-      contacts: this._formBuilder.array(
-        this._record.contacts.map(x => ContactEditComponent.getForm(this._formBuilder, x))
-      )
+    this._route.paramMap.subscribe(routeParams => {
+      this._id = routeParams.get('id');
+      this._record = this._personService.getSingle(this._id);
+      this._recordForm = this._formBuilder.group({
+        id: [this._record.id, Validators.required],
+        identificationCode: [this._record.identificationCode, [Validators.required, Validators.maxLength(15)]],
+        name: [this._record.name, [Validators.required, Validators.maxLength(80)]],
+        alias: [this._record.alias, [Validators.minLength(10), Validators.maxLength(30)]],
+        includeDate: [this._record.includeDate],
+        addresses: this._formBuilder.array(
+          this._record.addresses.map(x => AddressEditComponent.getForm(this._formBuilder, x))
+        ),
+        documents: this._formBuilder.array(
+          this._record.documents.map(x => DocumentEditComponent.getForm(this._formBuilder, x))
+        ),
+        contacts: this._formBuilder.array(
+          this._record.contacts.map(x => ContactEditComponent.getForm(this._formBuilder, x))
+        )
+      });
     });
   }
 

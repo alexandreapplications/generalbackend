@@ -1,34 +1,72 @@
 <div [formGroup]="item" class='container'>
   <div class='row-1'>
     <mat-form-field>
-      <input type="text" matInput formControlName="street" placeholder="Street">
+      <input type="text" matInput formControlName="street" placeholder="Street" i18n-placeholder="Street name@@street">
+      <mat-error *ngIf="item.get('street').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('street').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('street').getError('maxlength').actualLength }}</mat-error>
+        <mat-error *ngIf="item.get('street').getError('minlength')">
+          This field shoud have at least {{ this.item.get('street').getError('minlength').requiredLength
+          }} characters and has {{ this.item.get('street').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
     <div class='col-2'>
       <mat-form-field>
-        <input type="text" matInput formControlName="number" placeholder="Number">
-      </mat-form-field>
+        <input type="text" matInput formControlName="number" placeholder="Number" i18n-placeholder="Numer@@number">
+      </mat-form-field> 
     </div>
   </div>
   <mat-form-field>
-    <input type="text" matInput formControlName="information" placeholder="Information">
+    <input type="text" matInput formControlName="information" placeholder="Information" i18n-placeholder="Information@@information">
+    <mat-error *ngIf="item.get('information').getError('maxlength')">
+      This field shoudn't have more than {{ this.item.get('information').getError('maxlength').requiredLength
+      }} characters and has {{ this.item.get('information').getError('maxlength').actualLength }}</mat-error>
+      <mat-error *ngIf="item.get('information').getError('minlength')">
+        This field shoud have at least {{ this.item.get('information').getError('minlength').requiredLength
+        }} characters and has {{ this.item.get('information').getError('minlength').actualLength }}</mat-error>
   </mat-form-field>
   <div class='row-1'>
     <mat-form-field>
-      <input type="text" matInput formControlName="city" placeholder="City">
+      <input type="text" matInput formControlName="city" placeholder="City" i18n-placeholder="City name@@city">
+      <mat-error *ngIf="item.get('city').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('city').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('city').getError('maxlength').actualLength }}</mat-error>
+        <mat-error *ngIf="item.get('city').getError('minlength')">
+          This field shoud have at least {{ this.item.get('city').getError('minlength').requiredLength
+          }} characters and has {{ this.item.get('city').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
     <div class='col-2'>
       <mat-form-field>
-        <input type="text" matInput formControlName="state" placeholder="State">
+        <input type="text" matInput formControlName="state" placeholder="State" i18n-placeholder="State or provice@@state">
+        <mat-error *ngIf="item.get('state').getError('maxlength')">
+          This field shoudn't have more than {{ this.item.get('state').getError('maxlength').requiredLength
+          }} characters and has {{ this.item.get('state').getError('maxlength').actualLength }}</mat-error>
+          <mat-error *ngIf="item.get('state').getError('minlength')">
+            This field shoud have at least {{ this.item.get('state').getError('minlength').requiredLength
+            }} characters and has {{ this.item.get('state').getError('minlength').actualLength }}</mat-error>
       </mat-form-field>
     </div>
   </div>
   <div class='row-1'>
     <mat-form-field>
-      <input type="text" matInput formControlName="country" placeholder="Country">
+      <input type="text" matInput formControlName="country" placeholder="Country" i18n-placeholder="Country name@@country">
+      <mat-error *ngIf="item.get('country').getError('required')" i18n="@@required">This field is required</mat-error>
+      <mat-error *ngIf="item.get('country').getError('maxlength')">
+        This field shoudn't have more than {{ this.item.get('country').getError('maxlength').requiredLength
+        }} characters and has {{ this.item.get('country').getError('maxlength').actualLength }}</mat-error>
+        <mat-error *ngIf="item.get('country').getError('minlength')">
+          This field shoud have at least {{ this.item.get('country').getError('minlength').requiredLength
+          }} characters and has {{ this.item.get('country').getError('minlength').actualLength }}</mat-error>
     </mat-form-field>
     <div class='col-2'>
       <mat-form-field>
-        <input type="text" matInput formControlName="zipCode" placeholder="ZipCode">
+        <input type="text" matInput formControlName="zipCode" placeholder="ZipCode" i18n-placeholder="Zip code@@zipCode">
+        <mat-error *ngIf="item.get('zipCode').getError('required')" i18n="@@required">This field is required</mat-error>
+        <mat-error *ngIf="item.get('zipCode').getError('maxlength')">
+          This field shoudn't have more than {{ this.item.get('zipCode').getError('maxlength').requiredLength
+          }} characters and has {{ this.item.get('zipCode').getError('maxlength').actualLength }}</mat-error>
+          <mat-error *ngIf="item.get('zipCode').getError('minlength')">
+            This field shoud have at least {{ this.item.get('zipCode').getError('minlength').requiredLength
+            }} characters and has {{ this.item.get('zipCode').getError('minlength').actualLength }}</mat-error>
       </mat-form-field>
     </div>
     <div>
